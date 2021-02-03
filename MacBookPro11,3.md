@@ -70,3 +70,5 @@ $ flashrom --programmer linux_spi:dev=/dev/spidev0.0,spispeed=5000 -c MX25L6406E
 9. __Unclip Pomona clip!__
 a. Press the power button. *Notice how the boot chime sounds twice, which is likely due to the AcpiGlobalVariable still somehow telling about a boot script which does no longer exist!*
 b. __Enjoy a tiny bit more freedom =D__
+
+#efi #uefi #intel #macbook #bios #emc2745 #a1398 #macbookpro11 #spi #rom #flashrom #raspberry #macos #isp #pomona #soic8 #power #2013
