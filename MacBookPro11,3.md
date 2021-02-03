@@ -59,7 +59,7 @@ Control-MacBookPro$ scp pi@raspberrypi.local:romN.bin ./
 4. Power on your Mac
 5. Power off your Mac and __keep the power button pressed without any interruption, even over the next few instruction lines below!__
 6. Try reading the ROM as in the read verification above. *You MUST see the LED being lighted brightly (as there are coming but ff's from the ROM in this state)*
-7. Using one of your previous readouts issue:
+7. Using one of your previous readouts, issue:
 ```
 $ flashrom --programmer linux_spi:dev=/dev/spidev0.0,spispeed=5000 -c MX25L6406E/MX25L6408E -VVV -w ./romN.bin
 ```
