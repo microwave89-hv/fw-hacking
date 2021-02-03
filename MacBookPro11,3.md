@@ -31,6 +31,7 @@ print hexx_str
 1. Connect programmer's MISO MOSI SCK !CE over 215 ohms resistors to corresponding pins on the Pomona clip (as if it was attached to the SPI ROM right now).
 2. Connect programmer's GND without any resistor to corresponding pin on the Pomona clip.
 3. Connect programmer's VCC over a 215 ohms resistor to !HOLD pin on the Pomona clip.
+4. Having the victim Mac powered on but *sleep* make sure that the ROM chip has tied its !WP firmly to VCC (Probe with an LED for example)
 4. Connect green 20 mA LED over 820 ohms {citation} resistor from Pomona MISO to GND
 
 # Read Verification
