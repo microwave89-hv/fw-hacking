@@ -31,10 +31,21 @@ print hexx_str
 
 # Read Verification
 1. Put Mac to sleep but don't disconnect the battery!
-2. Carefully clip on Pomona clip to ROM
+2. Carefully clip on Pomona clip to ROM, noting the exact chip designation (e.g. "MX25L6406E")
 3. Issue 3 times ```$ flashrom --programmer linux_spi:dev=/dev/spidev0.0,spispeed=5000 -c MX25L6406E/MX25L6408E -VVV -r ./romN.bin``` | N € (1, 3), and wait for completion each time.
 4. Compare sha256sum hashes of those 3 files and repeat reading (perhaps with lower clock frequency) until they are 3 times the same.
-5. Ensure that Mac returns from its sleep just fine
+5. __Unclip Pomona clip!__
+6. Ensure that Mac returns from its sleep just fine
+7. Backup one of the readouts to somewhere safe, for instance to your controlling Mac:
+```
+Control-MacBookPro$ scp pi@raspberrypi.local:readN.bin ./
+```
 
 # Brick
 1. Put Mac back to sleep as before
+2. Carefully clip on Pomona clip to ROM
+3. Read 3 times as before, and compare readouts to each other in order to verify electrical connection
+4. Erase entire ROM: ```$ flashrom --programmer linux_spi:dev=/dev/spidev0.0,spispeed=5000 -c MX25L6406E/MX25L6408E -VVV -E```
+5. __Unclip Pomona clip!__
+6. Press any key on the victim Mac and *see how your Mac completely crashes if it tries to resume from sleep XD*
+7. Try to turn on and off your Mac a few times, note how it doesn't even want to stay turned off when releasing the power key shortly after powering down!
