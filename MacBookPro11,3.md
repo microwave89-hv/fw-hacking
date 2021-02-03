@@ -48,4 +48,4 @@ Control-MacBookPro$ scp pi@raspberrypi.local:readN.bin ./
 4. Erase entire ROM: ```$ flashrom --programmer linux_spi:dev=/dev/spidev0.0,spispeed=5000 -c MX25L6406E/MX25L6408E -VVV -E```
 5. __Unclip Pomona clip!__
 6. Press any key on the victim Mac and *see how your Mac completely crashes if it tries to resume from sleep XD*
-7. Try to turn on and off your Mac a few times, note how it doesn't even want to stay turned off when releasing the power key shortly after powering down!
+7. Try to turn on and off your Mac a few times, note how it doesn't even want to stay turned off when releasing the power key shortly after powering down! (You have to do an SMC reset (Shift + ctrl + Option + Power at the very same time) for it to stay off, or keep the power button pressed about 10 s after after powering down)
