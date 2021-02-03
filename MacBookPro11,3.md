@@ -38,7 +38,7 @@ print hexx_str
 6. Ensure that Mac returns from its sleep just fine
 7. Backup one of the readouts to somewhere safe, for instance to your controlling Mac:
 ```
-Control-MacBookPro$ scp pi@raspberrypi.local:readN.bin ./
+Control-MacBookPro$ scp pi@raspberrypi.local:romN.bin ./
 ```
 
 # Brick
@@ -49,3 +49,19 @@ Control-MacBookPro$ scp pi@raspberrypi.local:readN.bin ./
 5. __Unclip Pomona clip!__
 6. Press any key on the victim Mac and *see how your Mac completely crashes if it tries to resume from sleep XD*
 7. Try to turn on and off your Mac a few times, note how it doesn't even want to stay turned off when releasing the power key shortly after powering down! (You have to do an SMC reset (Shift + ctrl + Option + Power at the very same time) for it to stay off, or keep the power button pressed about 10 s after after powering down)
+
+# Unbrick
+1. Do a permanent shutdown as mentioned before at (7).
+2. Clip on Pomona clip
+3. __Physically move the control Mac so you can access its keyboard while accessing the keyboard of the victim Mac__
+4. Power on your Mac
+5. Power off your Mac and __keep the power button pressed without any interruption, even over the next few instruction lines below!__
+6. Try reading the ROM as in the read verification above. *You MUST see the LED being lighted brightly (as there are coming but ff's from the ROM in this state)*
+7. Using one of your previous readouts issue:
+```
+$ flashrom --programmer linux_spi:dev=/dev/spidev0.0,spispeed=5000 -c MX25L6406E/MX25L6408E -VVV -w ./romN.bin
+```
+8. Let go the power button
+9. __Unclip Pomona clip!__
+a. Press the power button. *Notice how the boot chime sounds twice, which is likely due to the AcpiGlobalVariable still somehow telling about a boot script which does no longer exist!*
+b. __Enjoy a tiny bit more freedom =D__
