@@ -3,7 +3,7 @@
 # DISCLAIMER: IT GOES WITHOUT SAYING THAT BELOW PROCEDURE IS RIDICULOUSLY DANGEROUS AND THE TINIEST MISTAKE MIGHT PHYSICALLY DAMAGE YOUR MACBOOK PRO HARDWARE! THESE STEPS DID NOT WORK FOR ME AND HAVE PROVEN TO (TEMPORARILY) BRICK MBP10,1 (Mid-2012 15" Retina)!
 
 # Preparation
-0. (Catalina)
+0. (Catalina on controller MacBook Pro, (any) on MBP10,1)
 1. Get Raspberry Pi 3B+
 2. Download Raspberry Pi Imager (imager_1.8.5.dmg)
 3. In Imager select 64 bit Raspberry Pi OS (that internally means e.g. Linux 6.6.51+rpt-rpi-v8 (aarch64) and flashrom v1.3 neded to accept e.g. "SST26VF064B(A)" flash)
